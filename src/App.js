@@ -40,7 +40,7 @@ class App extends Component {
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    fakeAuth.isAuthenticated ? (
+    fakeAuth.isAuthenticated() ? (
       <Component {...props}/>
     ) : (
       <Redirect to={{

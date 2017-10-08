@@ -21,7 +21,7 @@ class Login extends React.Component {
   }
 
   render() {
-    if (fakeAuth.isAuthenticated) { return <Redirect to='/' /> }
+    if (fakeAuth.isAuthenticated()) { return <Redirect to='/' /> }
 
     const { from } = this.props.location.state || { from: { pathname: '/' } }
     const { redirectToReferrer } = this.state
