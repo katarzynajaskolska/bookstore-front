@@ -7,11 +7,10 @@ import {
   withRouter
 } from 'react-router-dom';
 import auth from './auth';
-import AuthButton from './AuthButton';
 import { withCookies, Cookies } from 'react-cookie';
 import { instanceOf } from 'prop-types';
 
-class Login extends React.Component {
+class Login extends Component {
   static propTypes = {
     cookies: instanceOf(Cookies).isRequired
   };
@@ -54,7 +53,6 @@ class Login extends React.Component {
 
     return (
       <div>
-        <AuthButton />
         <p>You must log in to view the page at {from.pathname}</p>
         <form onSubmit={this.submit}>
           <label>Email</label>

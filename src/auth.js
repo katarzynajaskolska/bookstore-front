@@ -16,9 +16,9 @@ const auth = {
     })
     .catch((e) => console.log(e) );
   },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
+  signout(callback) {
+    this.userToken = null;
+    callback();
   }
 }
 
