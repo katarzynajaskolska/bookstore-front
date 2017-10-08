@@ -9,7 +9,7 @@ import {
   withRouter
 } from 'react-router-dom';
 import Login from './Login';
-import fakeAuth from './fakeAuth';
+import auth from './auth';
 import AuthButton from './AuthButton';
 import { withCookies, Cookies } from 'react-cookie';
 import { instanceOf } from 'prop-types';
@@ -22,7 +22,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     const { cookies } = this.props;
-    fakeAuth.userToken = cookies.get('userToken');
+    auth.userToken = cookies.get('userToken');
   }
 
   render() {
@@ -40,7 +40,7 @@ class App extends Component {
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    fakeAuth.isAuthenticated() ? (
+    auth.isAuthenticated() ? (
       <Component {...props}/>
     ) : (
       <Redirect to={{
