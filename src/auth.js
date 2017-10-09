@@ -5,16 +5,16 @@ const auth = {
   isAuthenticated() {
     return !!this.userToken
   },
-  authenticate({ email, password, callback }) {
+  authenticate({ email, password, onSuccess, onError }) {
     axios.post('http://localhost:3001/api/login', {
       email,
       password
     })
     .then((response) => {
       this.userToken = response.data.token;
-      callback(this.userToken);
+      onSuccess(this.userToken);
     })
-    .catch((e) => console.log(e) );
+    .catch(() => onError() );
   },
   signout(callback) {
     this.userToken = null;
