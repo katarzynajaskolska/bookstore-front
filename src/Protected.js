@@ -1,9 +1,46 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Navbar from './Navbar';
+import api from './api';
 
-const Protected = () =>
-  <div>
-    <Navbar />
-  </div>
+class Protected extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      results: [],
+    };
+  }
+
+  fetchBooks() {
+    api.getBooks().then((result) => {
+      this.setState({
+        results: result.data,
+      })
+    });
+  }
+
+  componentDidMount() {
+    this.fetchBooks();
+  }
+
+  render() {
+    const results = this.state.results || [];
+
+    return (
+      <div>
+        <Navbar />
+        <ul>
+          { this.state.results.map(item =>
+            <li key={item.id}>
+              <span>{item.title}</span>
+              <span>{item.author_id}</span>
+              <span>{item.published_at}</span>
+            </li>
+          )}
+        </ul>
+      </div>
+    )
+  }
+}
 
 export default Protected;
