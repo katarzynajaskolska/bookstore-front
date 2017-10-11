@@ -33,7 +33,7 @@ class Protected extends Component {
           { results.map(item =>
             <li key={item.id}>
               <span>{item.title}</span>
-              <span>{item.author_id}</span>
+              <span>{item.author}</span>
               <span>{item.published_at}</span>
             </li>
           )}
