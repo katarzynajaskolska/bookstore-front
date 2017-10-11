@@ -36,9 +36,10 @@ class Login extends Component {
     auth.authenticate({
       email: this.email_input.value,
       password: this.password_input.value,
-      onSuccess: (userToken) => {
+      onSuccess: (userToken, userEmail) => {
         this.setState({ redirectToReferrer: true });
         this.props.cookies.set('userToken', userToken);
+        this.props.cookies.set('userEmail', userEmail);
       },
       onError: () => { this.setState({ incorrectLogin: true }); }
     });

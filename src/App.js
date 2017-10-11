@@ -10,9 +10,9 @@ import {
 } from 'react-router-dom';
 import Login from './Login';
 import auth from './auth';
-import LogoutButton from './LogoutButton';
 import { withCookies, Cookies } from 'react-cookie';
 import { instanceOf } from 'prop-types';
+import Protected from './Protected';
 
 class App extends Component {
   static propTypes = {
@@ -23,13 +23,13 @@ class App extends Component {
     super(props);
     const { cookies } = this.props;
     auth.userToken = cookies.get('userToken');
+    auth.userEmail = cookies.get('userEmail');
   }
 
   render() {
     return (
       <Router>
         <div>
-          <Route path="/public" component={Public}/>
           <Route path="/login" component={Login}/>
           <PrivateRoute exact path="/" component={Protected}/>
         </div>
@@ -50,8 +50,5 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     )
   )}/>
 )
-
-const Public = () => <h3>Public</h3>
-const Protected = () => <div><LogoutButton /><h3>Protected</h3></div>
 
 export default withCookies(App);

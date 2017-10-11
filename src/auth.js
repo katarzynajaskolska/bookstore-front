@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const auth = {
   userToken: null,
+  userEmail: null,
   isAuthenticated() {
     return !!this.userToken
   },
@@ -12,7 +13,8 @@ const auth = {
     })
     .then((response) => {
       this.userToken = response.data.token;
-      onSuccess(this.userToken);
+      this.userEmail = response.data.email;
+      onSuccess(this.userToken, this.userEmail);
     })
     .catch(() => onError() );
   },
