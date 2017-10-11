@@ -24,12 +24,9 @@ class LogoutButton extends Component {
 
   render() {
     return (
-      <p>
-        Welcome!
-        <button onClick={this.onClick}>
-          Sign out
-        </button>
-      </p>
+      <a className='nav-logout' onClick={this.onClick}>
+        Sign out
+      </a>
     )
   }
 }

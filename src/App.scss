@@ -35,3 +35,30 @@
   color: $color-palette-1;
   margin-bottom: 20px;
 }
+
+.nav-palette-5 {
+  background-color: $color-palette-5;
+}
+
+.nav-brand {
+  font-size: 25px;
+}
+
+.nav-user {
+  color: $color-palette-1;
+  line-height: 50px;
+}
+
+.nav-logout {
+  margin-left: 15px;
+}
+
+a {
+  color: $color-palette-1;
+
+  &:hover {
+    color: $color-palette-1-darker;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

@@ -25,3 +25,23 @@
   font-weight: 700;
   color: #B06E6D;
   margin-bottom: 20px; }
+
+.nav-palette-5 {
+  background-color: #E3B0B2; }
+
+.nav-brand {
+  font-size: 25px; }
+
+.nav-user {
+  color: #B06E6D;
+  line-height: 50px; }
+
+.nav-logout {
+  margin-left: 15px; }
+
+a {
+  color: #B06E6D; }
+  a:hover {
+    color: #905b5b;
+    cursor: pointer;
+    text-decoration: none; }
