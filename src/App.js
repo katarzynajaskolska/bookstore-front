@@ -4,9 +4,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Redirect,
-  withRouter
+  Redirect
 } from 'react-router-dom';
 import Login from './Login';
 import auth from './auth';

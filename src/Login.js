@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import auth from './auth';
 import { withCookies, Cookies } from 'react-cookie';
 import { instanceOf } from 'prop-types';

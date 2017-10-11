@@ -30,7 +30,7 @@ class Protected extends Component {
       <div>
         <Navbar />
         <ul>
-          { this.state.results.map(item =>
+          { results.map(item =>
             <li key={item.id}>
               <span>{item.title}</span>
               <span>{item.author_id}</span>
