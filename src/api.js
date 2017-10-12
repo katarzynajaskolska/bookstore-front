@@ -13,7 +13,45 @@ const api = {
       url: url,
       headers: { 'Authorization': auth.userToken }
     });
-  }
+  },
+
+  postRates(bookId, value) {
+    const url = '/rates';
+    return axiosInstance({
+      method: 'post',
+      url: url,
+      headers: { 'Authorization': auth.userToken },
+      data: {
+        book_id: bookId,
+        value: value
+      }
+    });
+  },
+
+  putRates(bookId, value) {
+    const url = '/rates';
+    return axiosInstance({
+      method: 'put',
+      url: url,
+      headers: { 'Authorization': auth.userToken },
+      data: {
+        book_id: bookId,
+        value: value
+      }
+    });
+  },
+
+  deleteRates(bookId) {
+    const url = '/rates';
+    return axiosInstance({
+      method: 'delete',
+      url: url,
+      headers: { 'Authorization': auth.userToken },
+      data: {
+        book_id: bookId
+      }
+    });
+  },
 };
 
 export default api;
