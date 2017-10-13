@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StarRatingComponent from 'react-star-rating-component';
+import StarRatingComponent from './stars';
 import Navbar from './Navbar';
 import api from './api';
 
@@ -28,6 +28,9 @@ class Protected extends Component {
     }
     else if (prevValue !== nextValue) {
       api.putRates(name, nextValue)
+    }
+    if (prevValue === nextValue) {
+      api.deleteRates(name)
     }
   }
 
