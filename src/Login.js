@@ -52,9 +52,9 @@ class Login extends Component {
       <div className='form-wrapper'>
         <div className='panel panel-default form-container'>
           <div className='panel-body'>
-            <div className='logo'>bookstore</div>
+            <div className='logo'>Welcome to Bookstore</div>
             { incorrectLogin ?
-              (<div class='alert alert-danger'>Incorrect email or password</div>) :
+              (<div className='alert alert-danger'>Incorrect email or password</div>) :
               ''
             }
             <form onSubmit={this.submit}>

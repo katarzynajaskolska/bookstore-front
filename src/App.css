@@ -22,22 +22,25 @@
 
 .logo {
   font-size: 30px;
-  font-weight: 700;
   color: #B06E6D;
   margin-bottom: 20px; }
 
 .nav-palette-5 {
-  background-color: #E3B0B2; }
+  background-color: #E3B0B2;
+  border-radius: 0; }
 
 .nav-brand {
+  color: #fff;
   font-size: 25px; }
+  .nav-brand:hover {
+    color: #fff; }
 
 .nav-user {
   color: #B06E6D;
   line-height: 50px; }
 
 .nav-logout {
-  margin-left: 15px; }
+  margin-left: 25px; }
 
 a {
   color: #B06E6D; }
