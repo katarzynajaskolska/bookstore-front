@@ -27,17 +27,20 @@
 
 .nav-palette-5 {
   background-color: #E3B0B2;
-  border-radius: 0; }
+  border-radius: 0;
+  min-height: 60px; }
 
 .nav-brand {
   color: #fff;
-  font-size: 25px; }
+  font-size: 25px;
+  height: 60px;
+  line-height: 30px; }
   .nav-brand:hover {
     color: #fff; }
 
 .nav-user {
   color: #B06E6D;
-  line-height: 50px; }
+  line-height: 60px; }
 
 .nav-logout {
   margin-left: 25px; }

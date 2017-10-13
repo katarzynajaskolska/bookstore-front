@@ -38,11 +38,14 @@
 .nav-palette-5 {
   background-color: $color-palette-5;
   border-radius: 0;
+  min-height: 60px;
 }
 
 .nav-brand {
   color: $color-white;
   font-size: 25px;
+  height: 60px;
+  line-height: 30px;
 
   &:hover {
     color: $color-white;
@@ -51,7 +54,7 @@
 
 .nav-user {
   color: $color-palette-1;
-  line-height: 50px;
+  line-height: 60px;
 }
 
 .nav-logout {
