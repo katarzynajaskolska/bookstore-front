@@ -44,23 +44,35 @@ class Protected extends Component {
     return (
       <div>
         <Navbar />
-        <ul>
-          { results.map(item =>
-            <li key={item.id}>
-              <span>{item.title}</span>
-              <span>{item.author}</span>
-              <span>{item.published_at}</span>
-              <span className={item.user_rate}>
-                <StarRatingComponent
-                  name={String(item.id)}
-                  starCount={5}
-                  value={item.user_rate}
-                  onStarClick={this.onStarClick}
-                />
-              </span>
-            </li>
-          )}
-        </ul>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-6'>
+              <h2>Your last ratings</h2>
+              { results.map(item =>
+                <div className='panel panel-default' key={item.id}>
+                  <div className='panel-heading'>
+                    <h3 className='panel-title'>{item.title}</h3>
+                  </div>
+                  <div className='panel-body' style={{backgroundImage: `url("${item.image_url}")`}}></div>
+                  <div className='panel-footer'>
+                    <p><strong>Author: </strong><span>{item.author}</span></p>
+                    <p><strong>Published at: </strong><span>{item.published_at}</span></p>
+                    <div className='stars'>
+                      <StarRatingComponent
+                        name={String(item.id)}
+                        starCount={5}
+                        value={item.user_rate}
+                        onStarClick={this.onStarClick}
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className='col-md-6'>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
