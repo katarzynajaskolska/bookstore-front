@@ -6,8 +6,17 @@ const axiosInstance = axios.create({
 });
 
 const api = {
-  getBooks() {
-    const url = '/books';
+  getBooks(searchTerm) {
+    const url = `/books?query=${searchTerm}`;
+    return axiosInstance({
+      method: 'get',
+      url: url,
+      headers: { 'Authorization': auth.userToken }
+    });
+  },
+
+  getNewestBooks() {
+    const url = '/newest_books';
     return axiosInstance({
       method: 'get',
       url: url,
